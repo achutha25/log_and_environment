@@ -1,3 +1,5 @@
+# pylint: disable=C0304, C0115, R0903
+
 from calculator.calculation import Calculation
 
 class Calculator:
@@ -36,6 +38,3 @@ class Calculator:
     @classmethod
     def clear_history(cls):
         cls.history.clear()
-
-
-

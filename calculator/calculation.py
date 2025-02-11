@@ -1,3 +1,5 @@
+# pylint: disable=C0304, C0115, R0903
+
 class Calculation:
     def __init__(self, a: float, b: float, result: float, operation: str):
         self.a = a
@@ -7,4 +9,3 @@ class Calculation:
 
     def __repr__(self):
         return f"{self.a} {self.operation} {self.b} = {self.result}"
-

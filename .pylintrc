@@ -1,0 +1,8 @@
+[MASTER]
+ignore=venv
+max-line-length=120
+disable=missing-module-docstring,missing-function-docstring
+
+[MESSAGES CONTROL]
+disable=too-many-arguments,too-many-locals
+
