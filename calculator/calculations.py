@@ -1,26 +1,28 @@
-# pylint: disable=C0304, C0115, R0903
-
+from decimal import Decimal
+from typing import Callable, List
 from calculator.calculation import Calculation
 
-class Calculator:
-    history = []
-
-    @s
-
-    @staticmethod
-    def multiply(a: float, b: float) -> float:
-        result = a * b
-        Calculator.history.append(Calculation(a, b, result, "multiply"))
-        return result
-
-    @staticmethod
-    def divide(a: float, b: float) -> float:
-        if b == 0:
-            raise ZeroDivisionError("Cannot divide by zero")
-        result = a / b
-        Calculator.history.append(Calculation(a, b, result, "divide"))
-        return result
+class Calculations:
+    history: List[Calculation] = []
 
     @classmethod
-    def get_history(cls):
-        return cls.hi
+    def add_calculation(cls, calculation: Calculation):
+        cls.history.append(calculation)
+
+    @classmethod
+    def get_history(cls) -> List[Calculation]:
+        return cls.history
+
+    @classmethod
+    def clear_history(cls):
+        cls.history.clear()
+
+    @classmethod
+    def get_latest(cls) -> Calculation:
+        if cls.history:
+            return cls.history[-1]
+        return None
+
+    @classmethod
+    def find_by_operation(cls, operation_name: str) -> List[Calculation]:
+        return [calc for calc in cls.history if calc.operation.__name__ == operation_name]
