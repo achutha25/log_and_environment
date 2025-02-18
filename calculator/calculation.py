@@ -1,11 +1,19 @@
-# pylint: disable=C0304, C0115, R0903
+from decimal import Decimal
+from typing import Callable
+from calculator.operations import add, subtract, multiply, divide
 
 class Calculation:
-    def __init__(self, a: float, b: float, result: float, operation: str):
+    def __init__(self, a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]):
         self.a = a
         self.b = b
-        self.result = result
         self.operation = operation
 
+    @staticmethod
+    def create(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]):
+        return Calculation(a, b, operation)
+
+    def perform(self) -> Decimal:
+        return self.operation(self.a, self.b)
+
     def __repr__(self):
-        return f"{self.a} {self.operation} {self.b} = {self.result}"
+        return f"Calculation({self.a}, {self.b}, {self.operation.__name__})"

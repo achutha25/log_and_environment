@@ -5,17 +5,7 @@ from calculator.calculation import Calculation
 class Calculator:
     history = []
 
-    @staticmethod
-    def add(a: float, b: float) -> float:
-        result = a + b
-        Calculator.history.append(Calculation(a, b, result, "add"))
-        return result
-
-    @staticmethod
-    def subtract(a: float, b: float) -> float:
-        result = a - b
-        Calculator.history.append(Calculation(a, b, result, "subtract"))
-        return result
+    @s
 
     @staticmethod
     def multiply(a: float, b: float) -> float:
@@ -33,8 +23,4 @@ class Calculator:
 
     @classmethod
     def get_history(cls):
-        return cls.history
-
-    @classmethod
-    def clear_history(cls):
-        cls.history.clear()
+        return cls.hi
