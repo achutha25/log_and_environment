@@ -1,10 +1,6 @@
 
 [MESSAGES CONTROL]
-disable=trailing-whitespace,unused-import,line-too-long,redefined-outer-name,unused-argument
-# Only show these errors
-# Disable the following checks (example list):
-disable= unused-argument,
-         line-too-long,
+disable=trailing-whitespace,unused-import,line-too-long,redefined-outer-name,unused-argument,line-too-long,
          redefined-outer-name
 [MASTER]
 # Ignore the 'trailing-whitespace' warning
