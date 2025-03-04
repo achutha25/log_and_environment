@@ -33,3 +33,7 @@ def test_app_start_unknown_command(capfd, monkeypatch):
     
     # Optionally, check for specific exit code or message
     # assert excinfo.value.code == expected_exit_code
+
+    # Verify that the unknown command was handled as expected
+    captured = capfd.readouterr()
+    assert "No such command: unknown_command" in captured.out
