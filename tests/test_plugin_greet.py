@@ -15,6 +15,8 @@ def test_app_greet_command(capfd, monkeypatch):
 
     # Capture the output from the 'greet' command
     out, err = capfd.readouterr()
-    
+    out, err = capfd.readouterr()
+    assert err == "", "Expected no error output, but got something else."
+
     # Assert that 'Hello, World!' was printed to stdout
     assert "Hello, World!" in out, "The 'greet' command did not produce the expected output."
